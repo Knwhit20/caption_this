@@ -38,3 +38,6 @@
   - Frontend
 - Claude:
   - Backend
+
+![Main Page](https://github.com/SagerWilliams/project-2/blob/master/wireframe1.jpg)
+![Modal](https://github.com/SagerWilliams/project-2/blob/master/wireframe2.jpg)
