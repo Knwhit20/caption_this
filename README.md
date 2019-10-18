@@ -20,3 +20,13 @@
 
 * Must not expose sensitive API key information on the server, see [Protecting-API-Keys-In-Node.md](../../../../01-Class-Content/10-nodejs/03-Supplemental/Protecting-API-Keys-In-Node.md)
 
+## MVP
+- Frontend
+  - Front page is populated with a couple images
+  - Modal pops up when image is clicked
+  - Ability to add a caption to a image
+- Backend
+  - Database tables populate with x images and saves captions with a connection to the image
+  - Routes
+    - GET Front page
+    - POST Caption
