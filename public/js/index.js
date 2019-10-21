@@ -99,7 +99,7 @@ $(".card").click(function(e) {
   $(".modal").css("display", "block");
 });
 
-$(".delete").click(function(e) {
+$(".delete").click(function() {
   $(".modal").css("display", "none");
 });
 
