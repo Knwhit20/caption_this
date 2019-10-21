@@ -18,8 +18,26 @@
   - API
     - Unsplash
       - Our stock photo site of choice. We can filter by likes/downloads to make sure the photo is what we want
+  - Library/Tech
+    - Shepherd
+      - Site tour guide taking a new user through how the site is used.
+    - Bulma
+      - Alternative styling to bootstrap.
     
 - Apps functionality
   - Displays top photos including rating of photo and top rated comment.
   - Users can add captions to photos
   - Users can rate photos and captions
+
+## Breakdown of tasks:
+- Sager:
+  - Backend
+- Lacy:
+  - Frontend
+- Kristen:
+  - Frontend
+- Claude:
+  - Backend
+
+![Main Page](https://github.com/SagerWilliams/project-2/blob/master/wireframe1.jpg)
+![Modal](https://github.com/SagerWilliams/project-2/blob/master/wireframe2.jpg)

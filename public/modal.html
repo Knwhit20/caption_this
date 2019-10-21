@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/bulma@0.8.0/css/bulma.min.css">
+  <title> Caption this! </title>
+  <meta charset="utf-8" />
+  <style>
+    .textarea {
+      margin-top: 40px;
+      margin-bottom: 0px;
+      margin-right: 0px;
+      margin-left: 40px;
+
+
+    }
+
+    .button {
+      margin-top: 50px;
+      margin-bottom: 10px;
+      margin-right: 100px;
+      margin-left: 40px;
+    }
+
+    .checkbox {
+      margin-top: 50px;
+      margin-bottom: 10px;
+      margin-right: 100px;
+      margin-left: 40px;
+      padding-right: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero is-dark is-bold">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          Caption this!
+        </h1>
+
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <body>
+      <section class="section">
+        <div class="container">
+          <h1 class="title">Add a caption...</h1>
+          <h2 class="subtitle">
+            This is where the populated stock image will go. Users can write a caption below.
+          </h2>
+        </div>
+        <figure>
+          <img src="assets/images/example.jpg" width="225" height="250" alt="no potatoes please">
+        </figure>
+      </section>
+    </body>
+
+
+    <article class="media">
+
+      <div class="media-content">
+        <div class="field">
+          <p class="control">
+            <textarea class="textarea" placeholder="Add a comment..."></textarea>
+          </p>
+        </div>
+        <nav class="level">
+          <div class="level-center">
+            <div class="level-item">
+              <a class="button is-info">Submit</a>
+            </div>
+          </div>
+          <div class="level">
+            <div class="level-item">
+              <label class="checkbox">
+                <input type="checkbox"> Press enter to submit
+              </label>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </article>
+  </main>
+
+</body>
+
+
+
+</html>
