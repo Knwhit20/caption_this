@@ -1,11 +1,7 @@
 {
   "development": {
-    "username": "root",
-    "password": "Militia7!",
-    "database": "blogger",
-    "host": "127.0.0.1",
-    "port": 3306,
-    "dialect": "mysql"
+    "use_env_variable":"LOCAL_DB",
+    "dialect":"mysql"
   },
   "test": {
     "username": "root",
