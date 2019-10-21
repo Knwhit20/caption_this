@@ -1,0 +1,37 @@
+http://localhost:3000/api/insertimage
+
+{
+	"url": "https://www.demilked.com/magazine/wp-content/uploads/2018/03/5aaa1cc04ed34-funny-weird-wtf-stock-photos-19-5a3926af95d9d__700.jpg"
+}
+
+{
+	"url": "https://www.demilked.com/magazine/wp-content/uploads/2018/03/5aaa1cc45a750-funny-weird-wtf-stock-photos-4-5a3927b70f562__700.jpg"
+}
+
+{
+	"url": "https://i.pinimg.com/236x/33/72/7d/33727d49449f596b3416cd4d5a314ad9--memes.jpg"
+}
+
+{
+	"url": "https://media.gettyimages.com/photos/rabbit-and-horse-drinking-together-picture-id803674648?s=170667a"
+}
+
+{
+	"url": "https://i.redd.it/0uxjjfcsn8w01.jpg"
+}
+
+{
+	"url": "https://image.shutterstock.com/z/stock-photo-bold-young-man-kissing-woman-with-head-made-of-watermelon-38027860.jpg"
+}
+
+{
+	"url": "https://www.gettyimages.com/detail/photo/deer-head-men-working-at-office-royalty-free-image/108315120?adppopup=true"
+}
+
+{
+	"url": "https://media.gettyimages.com/photos/group-of-people-with-animal-costumes-picture-id527115207?s=2048x2048"
+}
+
+{
+	"url": "https://media.gettyimages.com/photos/beautiful-black-woman-portrait-with-horse-head-picture-id612652508?s=2048x2048"
+}
