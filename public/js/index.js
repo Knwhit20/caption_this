@@ -103,9 +103,9 @@ $(".delete").click(function(e) {
   $(".modal").css("display", "none");
 });
 
-$("#save").click(function(e) {
-  $(".textarea")
-});
+// $("#save").click(function(e) {
+//   $(".textarea")
+// });
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
