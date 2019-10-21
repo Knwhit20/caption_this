@@ -94,6 +94,15 @@ var handleDeleteBtnClick = function() {
   });
 };
 
+$(".card").click(function(e) {
+  console.log(e.target.src);
+  $(".modal").css("display", "block");
+});
+
+$(".delete").click(function(e) {
+ 
+  $(".modal").css("display", "none");
+});
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
