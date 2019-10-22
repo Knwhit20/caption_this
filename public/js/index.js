@@ -28,8 +28,10 @@ function createCard(imageData) {
             </div>
             <div class="card-content">
                 <div class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                    <p class="cardText"> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus nec iaculis mauris. 
+                    </p>
+                    <a>@bulmaio</a>.
                     <a href="#">#css</a> <a href="#">#responsive</a>
                     <br>
                     <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
@@ -59,14 +61,28 @@ $(document).ready(function() {
 
   // Adding an event listener for when the form is submitted
   $("#save").click(function handleFormSubmit(event) {
-    event.preventDefault();
+    // event.preventDefault();
     // Constructing a newComment object to hand to the database
     var newComment = {
       title: commentInput.val().trim()
     };
-    submitComment();
+    submitComment(newComment);
     console.log(newComment);
 
+    console.log($(this).children());
+
+    //does not work yet
+    $(this).find(".cardText").text(newComment.title);
+
+    //currently works, updates all the cards,
+    $(".cardText").text(newComment.title);
+
+    
+
+    
+
+
+    //posts comment to the database
     function submitComment(data) {
       $.post("/api/insertComment", newComment, function() {
         console.log(data);
