@@ -118,7 +118,7 @@ $(document).ready(function() {
     var newComment = {
       title: commentInput.val().trim()
     };
-
+    submitComment();
     console.log(newComment);
 
     function submitComment(data) {
@@ -126,6 +126,5 @@ $(document).ready(function() {
         console.log(data);
       });
     }
-    submitComment();
   });
 });
