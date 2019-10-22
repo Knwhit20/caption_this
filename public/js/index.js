@@ -51,16 +51,7 @@ function getImages() {
 }
 
 getImages();
-// $("#save").click(function(e) {
-//   $(".textarea")
-// });
 
-// Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
-// $("#save").click(function(){
-//   console.log('clicked');
-// })
 
 $(document).ready(function() {
   // Getting jQuery references to the post body, title, form, and category select
