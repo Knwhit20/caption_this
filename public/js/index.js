@@ -145,6 +145,33 @@ getImages();
 // $("#save").click(function(e) {
 //   $(".textarea")
 // });
+
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+// $("#save").click(function(){
+//   console.log('clicked');
+// })
+
+$(document).ready(function() {
+  // Getting jQuery references to the post body, title, form, and category select
+  var commentInput = $(".textarea");
+
+  // Adding an event listener for when the form is submitted
+  $("#save").click(function handleFormSubmit(event) {
+    event.preventDefault();
+    // Constructing a newComment object to hand to the database
+    var newComment = {
+      title: commentInput.val().trim()
+    };
+
+    console.log(newComment);
+
+    function submitComment(data) {
+      $.post("/api/insertComment", newComment, function() {
+        console.log(data);
+      });
+    }
+    submitComment();
+  });
+});
