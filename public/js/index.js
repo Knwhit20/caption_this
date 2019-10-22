@@ -94,15 +94,54 @@
 //   });
 // };
 
-$(".card").click(function(e) {
-  console.log(e.target.src);
-  $(".modal").css("display", "block");
+// $("#card").click(function () {
+//   $(".modal").css("display", "block");
+// });
+
+$(document).on("click", function(event) {
+  var clicked = event;
+  console.log($(this));
 });
 
-$(".delete").click(function() {
+$(".delete").click(function () {
   $(".modal").css("display", "none");
 });
 
+// create cards with image url using imageData
+function createCard(imageData) {
+  for (var i = 0; i < imageData.length; i++) {
+    var card = $(`
+    <div class="column">
+        <div class="card is-centered" id="card">
+            <div class="card-image">
+                <figure class=image is-3by2>
+                    <img width="25" src="` + imageData[i].url + `" alt="Placeholder image">
+                </figure>
+            </div>
+            <div class="card-content">
+                <div class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                    <a href="#">#css</a> <a href="#">#responsive</a>
+                    <br>
+                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                </div>
+            </div>
+        </div>
+    </div>
+    `);
+    $(".cardDiv").append(card);
+  }
+}
+
+function getImages() {
+  $.ajax({
+    url: "/api/images",
+    method: "GET"
+  }).then(createCard);
+}
+
+getImages();
 // $("#save").click(function(e) {
 //   $(".textarea")
 // });
