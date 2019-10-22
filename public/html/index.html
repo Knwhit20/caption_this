@@ -10,6 +10,12 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <style>
+        .cardDiv {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
 </head>
 
 
@@ -30,7 +36,9 @@
 
     <section class="section">
         <div class="container">
-            <div class="columns cardDiv is-block"> 
+            <div class="columns">
+                <div class="column cardDiv">
+                </div>
             </div>
         </div>
     </section>
@@ -44,7 +52,7 @@
             </header>
             <section class="modal-card-body">
                 <p class="image is-4by3 modalSrc">
-                    <img src="" alt="">
+                    <img class="modalImg" src="" alt="">
                 </p>
                 <div class="field">
                     <label class="label">Enter your meme comment</label>

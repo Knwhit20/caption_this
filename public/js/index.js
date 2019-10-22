@@ -2,9 +2,9 @@
 //   $(".modal").css("display", "block");
 // });
 
-$(document).on("click", function(event) {
-  var clicked = event;
-  console.log($(this));
+$(document).on("click", ".card", function(event) {
+  $(".modalImg").attr("src", $(this).find("img").attr('src'));
+  $(".modal").css("display", "block");
 });
 
 $(".delete").click(function () {
@@ -15,11 +15,11 @@ $(".delete").click(function () {
 function createCard(imageData) {
   for (var i = 0; i < imageData.length; i++) {
     var card = $(`
-    <div class="column">
+    <div class="column is-one-third">
         <div class="card is-centered" id="card">
             <div class="card-image">
                 <figure class=image is-3by2>
-                    <img width="25" src="` + imageData[i].url + `" alt="Placeholder image">
+                    <img class="cardImg" src="` + imageData[i].url + `" alt="Placeholder image">
                 </figure>
             </div>
             <div class="card-content">
