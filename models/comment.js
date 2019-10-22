@@ -14,7 +14,7 @@ module.exports = function(sequelize, DataTypes) {
     // A Post can't be created without an Author due to the foreign key constraint
     Comment.belongsTo(models.Image, {
       foreignKey: {
-        allowNull: false
+        allowNull: true
       }
     });
   };
