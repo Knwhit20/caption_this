@@ -11,6 +11,10 @@ $(".delete").click(function () {
   $(".modal").css("display", "none");
 });
 
+$("#cancel").click(function(){
+  $(".modal").css("display", "none");
+})
+
 // create cards with image url using imageData
 function createCard(imageData) {
   for (var i = 0; i < imageData.length; i++) {
