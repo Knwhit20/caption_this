@@ -15,6 +15,13 @@ module.exports = function(app) {
     });
   });
 
+  // TESTING PURPOSES
+  app.get("/api/images", function(req, res) {
+    db.Image.findAll({}).then(function(data) {
+      res.json(data);
+    });
+  });
+
   app.post("/api/insertComment", function(req, res) {
     db.Comment.create(req.body).then(function(data) {
       res.json(data);
