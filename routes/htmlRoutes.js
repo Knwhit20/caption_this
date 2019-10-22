@@ -1,4 +1,5 @@
 var path = require("path");
+var db = require("../models");
 
 // Routes
 // =============================================================
