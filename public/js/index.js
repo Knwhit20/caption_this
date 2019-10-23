@@ -21,7 +21,7 @@ $("#cancel").click(function(){
 function createCard(/** @type {Array} */ images) {
   for (var i = 0; i < images.length; i++) {
 
-    const currentImage = images[i];
+    var currentImage = images[i];
     var comment = currentImage.Comments[0];
 
     if (comment) {
@@ -84,10 +84,8 @@ $(document).ready(function() {
     //currently works, updates all the cards,
     $(".cardText").text(newComment.title);
 
+    $(".modal").css("display", "none");
     
-
-    
-
 
     //posts comment to the database
     function submitComment(data) {
@@ -96,4 +94,5 @@ $(document).ready(function() {
       });
     }
   });
+  
 });
