@@ -22,6 +22,7 @@ function createCard(/** @type {Array} */ images) {
   for (var i = 0; i < images.length; i++) {
 
     var currentImage = images[i];
+
     var comment = currentImage.Comments[[Math.floor(2*Math.random())]];
 
     if (comment) {
@@ -84,10 +85,8 @@ $(document).ready(function() {
     //currently works, updates all the cards,
     $(".cardText").text(newComment.title);
 
+    $(".modal").css("display", "none");
     
-
-    
-
 
     //posts comment to the database
     function submitComment(data) {
@@ -97,4 +96,5 @@ $(document).ready(function() {
       });
     }
   });
+  
 });
