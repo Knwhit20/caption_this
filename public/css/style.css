@@ -11,13 +11,47 @@ body {
 }
 .footer {
     padding: 2rem 1.5rem 2rem;
+    background-color: #56d3c0;
+    filter: drop-shadow(0px 0px 5px rgba(10,10,10,0.75));
 }
 .card {
     box-shadow: 0 0.5em 1em -0.125em rgba(10,10,10,0.5), 0 0 0 1px rgba(10,10,10,0.02);
 }
 .hero-body {
     padding: 1rem 1.5rem;
+    filter: drop-shadow(0px 4px 0px rgba(10,10,10,0.5));
+    text-align: center;
 }
 .hero.is-primary {
     background-color: #56d3c0;
+    filter: drop-shadow(0px 0px 5px rgba(10,10,10,0.75));
+}
+
+.card{
+    margin: 0px 10px;
+    transition: .5s;
+}
+.card:hover{
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+.whiteText, .modal-card-title {
+    color: white;
+}
+
+.modal-card {
+    margin-top: 25px;
+}
+
+.modal-card-head {
+    background-color: #56d3c0;
+}
+
+.btnMgn {
+    margin-right: 15px;
+}
+
+.textarea:not([rows]) {
+    min-height: 5em;
 }
