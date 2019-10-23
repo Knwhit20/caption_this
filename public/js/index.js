@@ -1,99 +1,99 @@
-// Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
+// $("#card").click(function () {
+//   $(".modal").css("display", "block");
+// });
 
-// The API object contains methods for each kind of request we'll make
-var API = {
-  saveExample: function(example) {
-    return $.ajax({
-      headers: {
-        "Content-Type": "application/json"
-      },
-      type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
-    });
-  },
-  getExamples: function() {
-    return $.ajax({
-      url: "api/examples",
-      type: "GET"
-    });
-  },
-  deleteExample: function(id) {
-    return $.ajax({
-      url: "api/examples/" + id,
-      type: "DELETE"
-    });
+$(document).on("click", ".card", function(event) {
+  $(".modalImg").attr("src", $(this).find("img").attr('src'));
+  $(".modal").css("display", "block");
+
+  $(".textarea").attr('imageId', $(this).find("img").attr('data-id'));
+});
+
+$(".delete").click(function () {
+  $(".modal").css("display", "none");
+});
+
+$("#cancel").click(function(){
+  $(".modal").css("display", "none");
+})
+
+// create cards with image url using images
+function createCard(/** @type {Array} */ images) {
+  for (var i = 0; i < images.length; i++) {
+
+    const currentImage = images[i];
+    var comment = currentImage.Comments[0];
+
+    if (comment) {
+      comment = comment.title;
+    } else {
+      comment = 'No comments yet!';
+    }
+
+    var card = $(`
+    <div class="column is-one-third">
+        <div class="card is-centered" id="card">
+            <div class="card-image">
+                <figure class=image is-3by2>
+                    <img data-id="${currentImage.id}" class="cardImg" src="` + currentImage.url + `" alt="Placeholder image">
+                </figure>
+            </div>
+            <div class="card-content">
+                <div class="content">
+                    <p class="cardText">${comment}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    `);
+    $(".cardDiv").append(card);
   }
-};
+}
 
-// refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
-      var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
+// Get images from database and then call createCard function
+function getImages() {
+  $.ajax({
+    url: "/api/images",
+    method: "GET"
+  }).then(createCard);
+}
 
-      var $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": example.id
-        })
-        .append($a);
+getImages();
 
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
 
-      $li.append($button);
+$(document).ready(function() {
+  // Getting jQuery references to the post body, title, form, and category select
+  var commentInput = $(".textarea");
 
-      return $li;
-    });
+  // Adding an event listener for when the form is submitted
+  $("#save").click(function handleFormSubmit(event) {
+    // event.preventDefault();
+    // Constructing a newComment object to hand to the database
+    var newComment = {
+      title: commentInput.val().trim(),
+      ImageId: commentInput.attr('imageid'),
+    };
+    submitComment(newComment);
+    console.log(newComment);
 
-    $exampleList.empty();
-    $exampleList.append($examples);
+    console.log($(this).children());
+
+    //does not work yet
+    $(this).find(".cardText").text(newComment.title);
+
+    //currently works, updates all the cards,
+    $(".cardText").text(newComment.title);
+
+    
+
+    
+
+
+    //posts comment to the database
+    function submitComment(data) {
+      $.post("/api/insertComment", newComment, function() {
+        console.log(data);
+      });
+    }
   });
-};
-
-// handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
-var handleFormSubmit = function(event) {
-  event.preventDefault();
-
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
-  };
-
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
-    return;
-  }
-
-  API.saveExample(example).then(function() {
-    refreshExamples();
-  });
-
-  $exampleText.val("");
-  $exampleDescription.val("");
-};
-
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
-  var idToDelete = $(this)
-    .parent()
-    .attr("data-id");
-
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
-  });
-};
-
-// Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+});
