@@ -5,6 +5,8 @@
 $(document).on("click", ".card", function(event) {
   $(".modalImg").attr("src", $(this).find("img").attr('src'));
   $(".modal").css("display", "block");
+
+  $(".textarea").attr('imageId', $(this).find("img").attr('data-id'));
 });
 
 $(".delete").click(function () {
@@ -15,26 +17,30 @@ $("#cancel").click(function(){
   $(".modal").css("display", "none");
 })
 
-// create cards with image url using imageData
-function createCard(imageData) {
-  for (var i = 0; i < imageData.length; i++) {
+// create cards with image url using images
+function createCard(/** @type {Array} */ images) {
+  for (var i = 0; i < images.length; i++) {
+
+    const currentImage = images[i];
+    var comment = currentImage.Comments[0];
+
+    if (comment) {
+      comment = comment.title;
+    } else {
+      comment = 'No comments yet!';
+    }
+
     var card = $(`
     <div class="column is-one-third">
         <div class="card is-centered" id="card">
             <div class="card-image">
                 <figure class=image is-3by2>
-                    <img class="cardImg" src="` + imageData[i].url + `" alt="Placeholder image">
+                    <img data-id="${currentImage.id}" class="cardImg" src="` + currentImage.url + `" alt="Placeholder image">
                 </figure>
             </div>
             <div class="card-content">
                 <div class="content">
-                    <p class="cardText"> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus nec iaculis mauris. 
-                    </p>
-                    <a>@bulmaio</a>.
-                    <a href="#">#css</a> <a href="#">#responsive</a>
-                    <br>
-                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                    <p class="cardText">${comment}</p>
                 </div>
             </div>
         </div>
@@ -64,7 +70,8 @@ $(document).ready(function() {
     // event.preventDefault();
     // Constructing a newComment object to hand to the database
     var newComment = {
-      title: commentInput.val().trim()
+      title: commentInput.val().trim(),
+      ImageId: commentInput.attr('imageid'),
     };
     submitComment(newComment);
     console.log(newComment);
