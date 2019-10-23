@@ -22,7 +22,8 @@ function createCard(/** @type {Array} */ images) {
   for (var i = 0; i < images.length; i++) {
 
     var currentImage = images[i];
-    var comment = currentImage.Comments[0];
+
+    var comment = currentImage.Comments[[Math.floor(2*Math.random())]];
 
     if (comment) {
       comment = comment.title;
@@ -91,6 +92,7 @@ $(document).ready(function() {
     function submitComment(data) {
       $.post("/api/insertComment", newComment, function() {
         console.log(data);
+        window.location.reload();
       });
     }
   });
