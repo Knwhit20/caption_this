@@ -22,12 +22,11 @@ module.exports = function(app) {
        * The `include` clause below will make sure that each image in `imageArray`
        * contains a field called `Comments`. This will include each comment in the
        * database associated with that image.
-       * 
        * @todo Make the `Comments` field lowercase to match the other fields.
        * This might be possible using the `as` key within the `include` configuration.
        */
       include: {
-        model: db.Comment,
+        model: db.Comment
       }
     }).then(function(imageArray) {
       res.json(imageArray);
