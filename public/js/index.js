@@ -28,12 +28,18 @@ function createCard(/** @type {Array} */ images) {
   for (var i = 0; i < images.length; i++) {
 
     var currentImage = images[i];
+<<<<<<< HEAD
     console.log(currentImage);
     var randomInt = getRandomIntInclusive(0, currentImage.Comments.length - 1);
     var comment = currentImage.Comments[randomInt];
     console.log(comment)
    
    
+=======
+
+    var comment = currentImage.Comments[[Math.floor(2*Math.random())]];
+
+>>>>>>> master
     if (comment) {
       comment = comment.title;
     } else {
@@ -94,10 +100,8 @@ $(document).ready(function() {
     //currently works, updates all the cards,
     $(".cardText").text(newComment.title);
 
+    $(".modal").css("display", "none");
     
-
-    
-
 
     //posts comment to the database
     function submitComment(data) {
@@ -107,4 +111,5 @@ $(document).ready(function() {
       });
     }
   });
+  
 });

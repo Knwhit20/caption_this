@@ -10,15 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-    <style>
-        .cardDiv {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .image img {
-            height: 300px;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 
@@ -48,7 +40,7 @@
     
     <div class="modal">
         <div class="modal-background"></div>
-        <div class="modal-card">
+        <div class="modal-card is-family-code">
             <header class="modal-card-head">
                 <p class="modal-card-title">Caption the Image</p>
                 <button class="delete" aria-label="close"></button>
@@ -58,25 +50,25 @@
                     <img class="modalImg" src="" alt="">
                 </p>
                 <div class="field">
-                    <label class="label">Enter your meme comment</label>
+                    <label class="label">Enter your Caption:</label>
                     <div class="control">
-                        <textarea class="textarea" placeholder="Enter your comment"></textarea>
+                        <textarea class="textarea is-family-code" placeholder="Enter your caption"></textarea>
                     </div>
                 </div>
             </section>
 
             <footer class="modal-card-foot">
                 <div class="control">
-                <button type = "submit" id="save" class="button is-success">Save changes</button>
+                <button type = "submit" id="save" class="button is-success is-family-code btnMgn">Post Caption</button>
                 </div> 
-                <button id="cancel" class="button">Cancel</button>
+                <button id="cancel" class="button is-family-code">Cancel</button>
             </footer>
         </div>
     </div>
     <footer class="footer">
         <div class="content has-text-centered is-primary">
-            <p>
-               <a> <strong>Caption This</strong> by Kristen Stroup, Sager Williams, Claude Hatfield, Tammy Lacy </a>
+            <p class="is-family-code whiteText">
+               <strong>Caption This</strong> by Kristen Stroup, Sager Williams, Claude Hatfield, Tammy Lacy
             </p>
         </div>
     </footer>
