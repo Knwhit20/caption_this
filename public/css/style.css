@@ -1,0 +1,23 @@
+body {
+    background-image: url("backgroundImage.jpg");
+    background-repeat: repeat;
+}
+.cardDiv {
+    display: flex;
+    flex-wrap: wrap;
+}
+.image img {
+    height: 300px;
+}
+.footer {
+    padding: 2rem 1.5rem 2rem;
+}
+.card {
+    box-shadow: 0 0.5em 1em -0.125em rgba(10,10,10,0.5), 0 0 0 1px rgba(10,10,10,0.02);
+}
+.hero-body {
+    padding: 1rem 1.5rem;
+}
+.hero.is-primary {
+    background-color: #56d3c0;
+}
