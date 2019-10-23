@@ -35,3 +35,19 @@ http://localhost:3000/api/insertimage
 {
 	"url": "https://media.gettyimages.com/photos/beautiful-black-woman-portrait-with-horse-head-picture-id612652508?s=2048x2048"
 }
+
+{
+	"url": "https://media.gettyimages.com/photos/retro-man-poses-with-wig-wearing-leopard-picture-id461129161?s=2048x2048"
+}
+
+{
+	"url": "https://media.gettyimages.com/photos/sasquatch-road-trip-picture-id486166653?s=2048x2048"
+}
+
+{
+	"url": "https://media.gettyimages.com/photos/angel-costume-man-sitting-on-couch-picture-id108269186?s=2048x2048"
+}
+
+{
+	"url": ""
+}
