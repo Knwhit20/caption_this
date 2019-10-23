@@ -55,3 +55,16 @@ body {
 .textarea:not([rows]) {
     min-height: 5em;
 }
+
+a {
+    color: #363636;
+}
+a:hover {
+    color: #181818;
+}
+
+.gitIcon {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+}
