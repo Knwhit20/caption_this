@@ -1,14 +1,14 @@
-#Caption This
+# Caption This
 
 Deployed on Heroku at: https://caption-this-project.herokuapp.com/
 
-##Purpose: 
+## Purpose: 
 Caption This was created to provide  entertainment to the user, reduce  work productivity, improve the user's wit and sarcasm.
 
-##How to use:  
+## How to use:  
 The user is provided with carefully selected images populated with user captions.  The user can enjoy reading other user's witty captions or add their own.  To add a caption, simply click on an image, add a comment to the field and click post.  Each time the screen is refreshed the image will be randomly populated with a different caption.
 
-##Technologies Used:
+## Technologies Used:
  1. Bulma
  2. Node.js
  3. Express
@@ -17,7 +17,7 @@ The user is provided with carefully selected images populated with user captions
  6. HTML
  7. MySQL
 
-##Project Requirements:
+## Project Requirements:
 
 * Must use a Node and Express Web Server
 * Must be backed by a MySQL Database with a Sequelize ORM  
@@ -29,7 +29,7 @@ The user is provided with carefully selected images populated with user captions
 * Must meet good quality coding standards (indentation, scoping, naming)
 * Must not expose sensitive API key information on the server, see [Protecting-API-Keys-In-Node.md](../../../../01-Class-Content/10-nodejs/03-Supplemental/Protecting-API-Keys-In-Node.md)
 
-##Future Development:
+## Future Development:
 1. Add "likes" & "dislikes" to captions.  The highest ranked caption will be populated to the image.
 2. Create user logins
 3. Share feature to allow users to easily share the site
