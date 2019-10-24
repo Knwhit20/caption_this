@@ -1,7 +1,3 @@
-// $("#card").click(function () {
-//   $(".modal").css("display", "block");
-// });
-
 $(document).on("click", ".card", function(event) {
   $(".modalImg").attr("src", $(this).find("img").attr('src'));
   $(".modal").css("display", "block");
@@ -20,7 +16,7 @@ $("#cancel").click(function(){
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 // create cards with image url using images
@@ -77,7 +73,6 @@ $(document).ready(function() {
 
   // Adding an event listener for when the form is submitted
   $("#save").click(function handleFormSubmit(event) {
-    // event.preventDefault();
     // Constructing a newComment object to hand to the database
     var newComment = {
       title: commentInput.val().trim(),
